@@ -36,8 +36,12 @@ jobs:
         if: steps.npm-cache.outputs.cache-hit != 'true'
         run: npm ci
 
+      - name: Build app
+        run: npm run build
+
       - name:  Deploy with nuxthub
-        run: npx nuxthub deploy
+        working-directory: ./src/apps/app
+        run: npx nuxthub deploy --no-build
         env:
           NUXT_HUB_PROJECT_KEY: ${{ secrets.NUXT_HUB_PROJECT_KEY }}
           NUXT_HUB_USER_TOKEN: ${{ secrets.NUXT_HUB_USER_TOKEN }}

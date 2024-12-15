@@ -16,6 +16,6 @@
   ],
   "scripts": {
     "dev": "npm run dev --workspace @demo/app",
-    "build": "npm run dev --workspace @demo/app"
+    "build": "npm run build --workspace @demo/app"
   }
 }
