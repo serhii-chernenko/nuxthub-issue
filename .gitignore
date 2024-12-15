@@ -1,0 +1,12 @@
+.DS_Store
+.idea
+.vscode
+.editorconfig
+.nuxt
+.output
+.data
+.nuxtrc
+.npmrc
+.eslintcache
+node_modules
+dist

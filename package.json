@@ -1,0 +1,21 @@
+{
+  "name": "demo",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serhii-chernenko/nuxthub-issue"
+  },
+  "author": "Serhii Chernenko",
+  "engines": {
+    "node": ">=18",
+    "npm": ">=9"
+  },
+  "workspaces": [
+    "src/layers/*",
+    "src/apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace @demo/app",
+    "build": "npm run dev --workspace @demo/app"
+  }
+}

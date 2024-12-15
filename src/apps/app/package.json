@@ -1,0 +1,21 @@
+{
+  "name": "@demo/app",
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@demo/ui": "file:../../layers/ui",
+    "@nuxthub/core": "^0.8.8",
+    "nuxt": "^3.14.1592",
+    "vue": "latest",
+    "vue-router": "latest"
+  },
+  "devDependencies": {
+    "wrangler": "^3.95.0"
+  }
+}
