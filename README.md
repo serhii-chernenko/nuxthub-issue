@@ -4,11 +4,11 @@ Repo: https://github.com/serhii-chernenko/nuxthub-issue/
 
 ## Content
 
-- [Architecture]()
-- [Prepare local environment]()
-- [Prepare deployment environment]()
-- [Issues]()
-- [Expected help]()
+- [Architecture](https://github.com/serhii-chernenko/nuxthub-issue/tree/main?tab=readme-ov-file#architecture)
+- [Prepare local environment](https://github.com/serhii-chernenko/nuxthub-issue/tree/main?tab=readme-ov-file#prepare-local-environment)
+- [Prepare deployment environment](https://github.com/serhii-chernenko/nuxthub-issue/tree/main?tab=readme-ov-file#prepare-deployment-environment)
+- [Issues](https://github.com/serhii-chernenko/nuxthub-issue/tree/main?tab=readme-ov-file#issues)
+- [Expected help](https://github.com/serhii-chernenko/nuxthub-issue/tree/main?tab=readme-ov-file#expected-help)
 
 ## Architecture
 
