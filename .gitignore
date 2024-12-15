@@ -5,6 +5,7 @@
 .nuxt
 .output
 .data
+.wrangler
 .nuxtrc
 .npmrc
 .eslintcache
