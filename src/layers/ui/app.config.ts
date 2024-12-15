@@ -1,6 +1,6 @@
 export default defineAppConfig({
   myLayer: {
-    name: 'Hello from the UI layer'
+    name: 'Hello from the @demo/ui layer'
   }
 })
 
