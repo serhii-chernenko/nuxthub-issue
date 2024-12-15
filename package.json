@@ -15,7 +15,8 @@
     "src/apps/*"
   ],
   "scripts": {
+    "cleanup": "rm -rf package-lock.json src/layers/ui/node_modules src/apps/app/node_modules",
     "dev": "npm run dev --workspace @demo/app",
-    "build": "npm run build --workspace @demo/app"
+    "build": "npm run build --workspace src/layers/* && npm run build --workspace @demo/app"
   }
 }

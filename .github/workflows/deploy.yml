@@ -34,9 +34,7 @@ jobs:
 
       - name: Install dependencies
         # if: steps.npm-cache.outputs.cache-hit != 'true'
-        run: | 
-          npm cache clean --force
-          npm install
+        run: npm install
 
       - name: Build app
         run: npm run build
