@@ -39,8 +39,7 @@ jobs:
             npm run postinstall
 
       - name:  Deploy with nuxthub
-        working-directory: ./src/apps/app
-        run: npx nuxthub deploy
+        run: npx nuxthub deploy src/apps/app
         env:
           NUXT_HUB_PROJECT_KEY: ${{ secrets.NUXT_HUB_PROJECT_KEY }}
           NUXT_HUB_USER_TOKEN: ${{ secrets.NUXT_HUB_USER_TOKEN }}
