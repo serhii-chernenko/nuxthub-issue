@@ -17,9 +17,10 @@
   "scripts": {
     "cleanup": "rm -rf package-lock.json src/layers/ui/node_modules src/apps/app/node_modules",
     "dev": "npm run dev --workspace @demo/app",
-    "build": "npm run build --workspace src/layers/* && npm run build --workspace @demo/app"
+    "postinstall": "npm run dev:prepare --workspace src/layers/*"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "4.28.1"
+    "@rollup/rollup-linux-x64-gnu": "4.28.1",
+    "nuxthub": "^0.7.6"
   }
 }

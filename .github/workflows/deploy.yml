@@ -34,14 +34,10 @@ jobs:
 
       - name: Install dependencies
         if: steps.npm-cache.outputs.cache-hit != 'true'
-        run: npm install
-
-      - name: Build app
-        run: npm run build
+        run: npm ci
 
       - name:  Deploy with nuxthub
-        working-directory: ./src/apps/app
-        run: npx nuxthub deploy --no-build
+        run: npx nuxthub deploy src/apps/app
         env:
           NUXT_HUB_PROJECT_KEY: ${{ secrets.NUXT_HUB_PROJECT_KEY }}
           NUXT_HUB_USER_TOKEN: ${{ secrets.NUXT_HUB_USER_TOKEN }}
