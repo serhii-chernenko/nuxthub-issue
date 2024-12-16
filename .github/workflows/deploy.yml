@@ -34,9 +34,10 @@ jobs:
 
       - name: Install dependencies
         if: steps.npm-cache.outputs.cache-hit != 'true'
-        run: |
-            npm ci
-            npm run postinstall
+        run: npm ci
+
+      - name: Run postinstall
+        run: npm run postinstall
 
       - name:  Deploy with nuxthub
         run: npx nuxthub deploy src/apps/app
