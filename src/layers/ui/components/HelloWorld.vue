@@ -4,7 +4,7 @@ const { myLayer } = useAppConfig()
 
 <template>
   <div>
-    <h1>Hello World from the @demo/ui layers in a monorepo workspace!</h1>
+    <h1>Hello World from the @demo/ui layers in a monorepo workspace (upd)!</h1>
     <pre>{{ myLayer }}</pre>
   </div>
 </template>
