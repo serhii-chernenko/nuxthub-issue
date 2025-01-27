@@ -33,5 +33,7 @@ export default defineEventHandler(async (event) => {
 
   await hubKV().set('items', items)
 
-  setResponseStatus(event, 204, 'Deleted')
+  setResponseStatus(event, 200, `Item ${body.data.id} deleted`)
+
+  return body.data.id
 })

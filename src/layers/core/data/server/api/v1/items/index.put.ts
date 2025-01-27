@@ -10,12 +10,17 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  items.push({
-    id: crypto.randomUUID(),
+  const id = crypto.randomUUID()
+  const item = {
+    id,
     name: `Item ${items.length + 1}`,
-  })
+  }
+
+  items.push(item)
 
   await hubKV().set('items', items)
 
-  setResponseStatus(event, 201, 'Created')
+  setResponseStatus(event, 201, item)
+
+  return item
 })
