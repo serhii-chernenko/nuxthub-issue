@@ -17,9 +17,9 @@
   "scripts": {
     "dev:cleanup": "npm run dev:cleanup --workspaces --if-present",
     "dev:prepare": "npm run dev:prepare --workspaces --if-present",
-    "dev:admin": "npm run dev --workspace @demo/app",
+    "dev:app": "npm run dev --workspace @demo/app",
     "postinstall": "npm-run-all --serial dev:cleanup dev:prepare",
-    "dev": "npm-run-all --serial postinstall dev:admin",
+    "dev": "npm-run-all --serial postinstall dev:app",
     "lint": "eslint src/",
     "format": "eslint --fix src/",
     "prepare": "husky"
