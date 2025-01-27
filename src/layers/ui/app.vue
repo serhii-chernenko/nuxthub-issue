@@ -7,7 +7,7 @@
           class="alert alert-error w-full px-4 sm:px-8 shadow-lg pointer-events-auto"
         >
           <span>
-            {{ getErrorMessage(error.value) }}
+            {{ getErrorMessage(error) }}
           </span>
           <button
             type="button"
@@ -33,8 +33,14 @@ useHead({
 const getErrorMessage = (error: any) => {
   if (error?.statusMessage) {
     return error.statusMessage
+  } else if (error?.value?.statusMessage) {
+    return error.value.statusMessage
+  } else if (error?.message) {
+    return error.message
+  } else if (error?.value?.message) {
+    return error.value.message
+  } else {
+    return 'Something went wrong'
   }
-
-  return error?.message ?? 'Something went wrong'
 }
 </script>
