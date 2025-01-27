@@ -1,6 +1,6 @@
 import type { Item } from '@demo/data/types/items.d'
 
-export default defineEventHandler(async (event) => {
+export default defineEventHandler(async () => {
   const items = await hubKV().get<Item[]>('items') ?? []
 
   if (items.length === 5) {
@@ -19,8 +19,6 @@ export default defineEventHandler(async (event) => {
   items.push(item)
 
   await hubKV().set('items', items)
-
-  setResponseStatus(event, 201, item)
 
   return item
 })

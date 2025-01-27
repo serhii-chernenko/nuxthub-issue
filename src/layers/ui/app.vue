@@ -7,7 +7,7 @@
           class="alert alert-error w-full px-4 sm:px-8 shadow-lg pointer-events-auto"
         >
           <span>
-            {{ error?.value?.statusMessage ?? 'Something went wrong' }}
+            {{ getErrorMessage(error.value) }}
           </span>
           <button
             type="button"
@@ -29,4 +29,12 @@
 useHead({
   titleTemplate: title => title ? `${title} — NuxtHub Issues` : 'NuxtHub Issues',
 })
+
+const getErrorMessage = (error: any) => {
+  if (error?.statusMessage) {
+    return error.statusMessage
+  }
+
+  return error?.message ?? 'Something went wrong'
+}
 </script>

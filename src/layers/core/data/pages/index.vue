@@ -72,11 +72,8 @@ const addItem = async () => {
 }
 
 const deleteItem = async (item: Pick<Item, 'id'>) => {
-  await $fetch('/api/v1/items', {
-    method: 'post',
-    body: {
-      id: item.id,
-    },
+  await $fetch(`/api/v1/items/${item.id}`, {
+    method: 'delete',
   })
 
   await refresh()
