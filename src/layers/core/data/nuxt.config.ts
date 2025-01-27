@@ -6,4 +6,9 @@ export default defineNuxtConfig({
   hub: {
     kv: true,
   },
+  $development: {
+    hub: {
+      remote: true
+    }
+  }
 })
