@@ -73,7 +73,7 @@ const addItem = async () => {
 
 const deleteItem = async (item: Pick<Item, 'id'>) => {
   await $fetch('/api/v1/items', {
-    method: 'delete',
+    method: 'post',
     body: {
       id: item.id,
     },

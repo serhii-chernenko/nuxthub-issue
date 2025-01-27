@@ -6,7 +6,9 @@
           role="alert"
           class="alert alert-error w-full px-4 sm:px-8 shadow-lg pointer-events-auto"
         >
-          <span>{{ error.value.statusMessage ?? 'Something went wrong' }}</span>
+          <span>
+            {{ error?.value?.statusMessage ?? 'Something went wrong' }}
+          </span>
           <button
             type="button"
             class="btn btn-sm btn-ghost"
