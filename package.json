@@ -11,16 +11,26 @@
     "npm": ">=9"
   },
   "workspaces": [
-    "src/layers/*",
+    "src/layers/**",
     "src/apps/*"
   ],
   "scripts": {
-    "cleanup": "rm -rf package-lock.json src/layers/ui/node_modules src/apps/app/node_modules",
-    "dev": "npm run dev --workspace @demo/app",
-    "postinstall": "npm run dev:prepare --workspace src/layers/*"
+    "dev:cleanup": "npm run dev:cleanup --workspaces --if-present",
+    "dev:prepare": "npm run dev:prepare --workspaces --if-present",
+    "dev:admin": "npm run dev --workspace @demo/app",
+    "postinstall": "npm-run-all --serial dev:cleanup dev:prepare",
+    "dev": "npm-run-all --serial postinstall dev:admin",
+    "lint": "eslint src/",
+    "format": "eslint --fix src/",
+    "prepare": "husky"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "4.28.1",
-    "nuxthub": "^0.7.6"
+    "@rollup/rollup-linux-x64-gnu": "latest",
+    "nuxthub": "latest"
+  },
+  "devDependencies": {
+    "eslint": "latest",
+    "husky": "latest",
+    "npm-run-all": "latest"
   }
 }

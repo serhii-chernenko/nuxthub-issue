@@ -2,21 +2,29 @@
   "name": "@demo/app",
   "type": "module",
   "scripts": {
+    "dev:cleanup": "nuxi cleanup",
+    "dev:prepare": "nuxt prepare",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "format": "eslint --fix ."
   },
   "dependencies": {
     "@demo/ui": "file:../../layers/ui",
-    "@nuxthub/core": "^0.8.8",
-    "nuxt": "^3.14.1592",
+    "@demo/data": "file:../../layers/core/data",
+    "@nuxt/eslint": "latest",
+    "@nuxthub/core": "latest",
+    "eslint": "latest",
+    "nuxt": "latest",
+    "typescript": "latest",
     "vue": "latest",
     "vue-router": "latest"
   },
   "devDependencies": {
-    "wrangler": "^3.95.0",
-    "nuxthub": "^0.7.4"
+    "vite-plugin-eslint2": "latest",
+    "wrangler": "latest"
   }
 }

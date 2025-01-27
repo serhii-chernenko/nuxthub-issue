@@ -1,5 +1,6 @@
 {
-  "name": "@demo/ui",
+  "name": "@demo/data",
+  "private": true,
   "type": "module",
   "version": "0.0.1",
   "main": "./nuxt.config.ts",
@@ -14,17 +15,17 @@
     "format": "eslint --fix ."
   },
   "dependencies": {
+    "@demo/ui": "file:../../ui",
     "@nuxt/eslint": "latest",
-    "@nuxtjs/tailwindcss": "latest",
-    "@stylistic/eslint-plugin": "latest",
-    "daisyui": "^4.12.23",
-    "sass-embedded": "latest"
+    "@nuxthub/core": "latest",
+    "zod": "latest"
   },
   "devDependencies": {
     "eslint": "latest",
     "nuxt": "latest",
     "typescript": "latest",
     "vite-plugin-eslint2": "latest",
-    "vue": "latest"
+    "vue": "latest",
+    "wrangler": "latest"
   }
 }

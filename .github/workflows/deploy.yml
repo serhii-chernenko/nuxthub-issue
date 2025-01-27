@@ -39,6 +39,10 @@ jobs:
       - name: Run postinstall
         run: npm run postinstall
 
+      - name: Run ESLint
+        continue-on-error: false
+        run: npm run lint
+
       - name:  Deploy with nuxthub
         run: npx nuxthub deploy src/apps/app
         env:
