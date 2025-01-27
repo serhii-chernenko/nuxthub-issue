@@ -1,4 +1,5 @@
 import type { Item } from '@demo/data/types/items.d'
+import { setResponseStatus } from 'nuxt/app'
 
 export default defineEventHandler(async () => {
   const items = await hubKV().get<Item[]>('items') ?? []
@@ -16,4 +17,6 @@ export default defineEventHandler(async () => {
   })
 
   await hubKV().set('items', items)
+
+  setResponseStatus(event, 201)
 })

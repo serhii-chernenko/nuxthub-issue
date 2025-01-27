@@ -1,4 +1,5 @@
 import type { Item } from '@demo/data/types/items.d'
+import { setResponseStatus } from 'nuxt/app'
 import { z } from 'zod'
 
 export default defineEventHandler(async (event) => {
@@ -32,4 +33,6 @@ export default defineEventHandler(async (event) => {
   items.splice(index, 1)
 
   await hubKV().set('items', items)
+
+  setResponseStatus(event, 204)
 })
