@@ -9,16 +9,17 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
+    "upgrade": "nuxi upgrade --force",
     "lint": "eslint .",
     "format": "eslint --fix ."
   },
   "dependencies": {
-    "@demo/ui": "file:../../layers/ui",
     "@demo/data": "file:../../layers/core/data",
+    "@demo/ui": "file:../../layers/ui",
     "@nuxt/eslint": "latest",
     "@nuxthub/core": "latest",
     "eslint": "latest",
-    "nuxt": "latest",
+    "nuxt": "^3.15.3",
     "typescript": "latest",
     "vue": "latest",
     "vue-router": "latest"

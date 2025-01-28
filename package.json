@@ -20,6 +20,7 @@
     "dev:app": "npm run dev --workspace @demo/app",
     "postinstall": "npm-run-all --serial dev:cleanup dev:prepare",
     "dev": "npm-run-all --serial postinstall dev:app",
+    "upgrade": "npm run upgrade --workspaces",
     "lint": "eslint src/",
     "format": "eslint --fix src/",
     "prepare": "husky"

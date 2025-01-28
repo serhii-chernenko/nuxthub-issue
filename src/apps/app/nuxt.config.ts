@@ -4,4 +4,13 @@ export default defineNuxtConfig({
   modules: ['@nuxt/eslint', '@nuxthub/core'],
   devtools: { enabled: true },
   compatibilityDate: '2025-01-27',
+  typescript: {
+    // https://github.com/nuxt/nuxt/issues/20155
+    includeWorkspace: true,
+  },
+  eslint: {
+    config: {
+      standalone: false,
+    },
+  },
 })

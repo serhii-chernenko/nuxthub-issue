@@ -5,12 +5,13 @@
   "version": "0.0.1",
   "main": "./nuxt.config.ts",
   "scripts": {
-    "dev:cleanup": "nuxi cleanup",
+    "dev:cleanup": "nuxi cleanup .playground",
     "dev": "nuxi dev .playground",
     "dev:prepare": "nuxt prepare .playground",
     "build": "nuxt build .playground",
     "generate": "nuxt generate .playground",
     "preview": "nuxt preview .playground",
+    "upgrade": "nuxi upgrade --force",
     "lint": "eslint .",
     "format": "eslint --fix ."
   },
@@ -22,7 +23,7 @@
   },
   "devDependencies": {
     "eslint": "latest",
-    "nuxt": "latest",
+    "nuxt": "^3.15.3",
     "typescript": "latest",
     "vite-plugin-eslint2": "latest",
     "vue": "latest",
