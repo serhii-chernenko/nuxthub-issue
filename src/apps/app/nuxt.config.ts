@@ -8,9 +8,4 @@ export default defineNuxtConfig({
     // https://github.com/nuxt/nuxt/issues/20155
     includeWorkspace: true,
   },
-  eslint: {
-    config: {
-      standalone: false,
-    },
-  },
 })

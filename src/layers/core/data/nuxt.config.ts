@@ -16,9 +16,4 @@ export default defineNuxtConfig({
   hub: {
     kv: true,
   },
-  eslint: {
-    config: {
-      standalone: false,
-    },
-  },
 })

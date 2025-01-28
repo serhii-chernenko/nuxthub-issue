@@ -10,11 +10,6 @@ export default defineNuxtConfig({
   ],
   devtools: { enabled: true },
   compatibilityDate: '2025-01-27',
-  eslint: {
-    config: {
-      standalone: false,
-    },
-  },
   tailwindcss: {
     cssPath: resolve('./assets/css/tailwind.css'),
   },
