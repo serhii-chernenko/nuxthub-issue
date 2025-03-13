@@ -22,6 +22,8 @@
     "dev": "npm-run-all --serial postinstall dev:app",
     "upgrade": "npm run upgrade --workspaces",
     "build:app": "npm run build --workspace @demo/app",
+    "db:generate": "npm run db:generate --workspaces --if-present",
+    "db:migrate": "npm run db:migrate --workspaces --if-present",
     "lint": "eslint src/",
     "format": "eslint --fix src/",
     "prepare": "husky"

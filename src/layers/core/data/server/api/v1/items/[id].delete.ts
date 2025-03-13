@@ -1,4 +1,3 @@
-import type { Item } from '@demo/data/types/items.d'
 import { z } from 'zod'
 
 export default defineEventHandler(async (event) => {
@@ -16,22 +15,5 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  const items = await hubKV().get<Item[]>('items') ?? []
-  const index = items.findIndex((item) => {
-    return item.id === params.data.id
-  })
-
-  if (index === -1) {
-    throw createError({
-      statusCode: 404,
-      statusMessage: 'Item not found',
-      data: { id: params.data.id },
-    })
-  }
-
-  items.splice(index, 1)
-
-  await hubKV().set('items', items)
-
-  setResponseStatus(event, 200, `Item ${params.data.id} deleted`)
+  return await useItemsRepository(event).deleteById(params.data.id)
 })

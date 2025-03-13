@@ -1,8 +1,7 @@
-import type { Item } from '@demo/data/types/items.d'
-
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig(event).public
-  const items = await hubKV().get<Item[]>('items') ?? []
+  const { select, insert } = useItemsRepository(event)
+  const items = await select()
 
   if (items.length >= (config?.itemsLimit as number || 5)) {
     throw createError({
@@ -11,15 +10,8 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  const id = crypto.randomUUID()
-  const item = {
-    id,
+  return await insert({
     name: `Item ${items.length + 1}`,
-  }
-
-  items.push(item)
-
-  await hubKV().set('items', items)
-
-  return item
+    createdAt: new Date(),
+  })
 })

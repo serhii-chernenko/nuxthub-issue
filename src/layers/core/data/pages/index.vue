@@ -76,11 +76,9 @@
 </template>
 
 <script setup lang="ts">
-import type { Item } from '@demo/data/types/items.d'
-
 const config = useRuntimeConfig().public
 
-const { data: items, status, error, refresh } = await useFetch<Item[]>('/api/v1/items')
+const { data: items, status, error, refresh } = await useFetch('/api/v1/items')
 
 const isLoading = shallowRef<boolean>(false)
 const reachedLimit = computed<boolean>(() => {

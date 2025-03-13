@@ -12,6 +12,8 @@
     "generate": "nuxt generate .playground",
     "preview": "nuxt preview .playground",
     "upgrade": "nuxi upgrade --force",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
     "lint": "eslint .",
     "format": "eslint --fix ."
   },
@@ -19,6 +21,8 @@
     "@demo/ui": "file:../../ui",
     "@nuxt/eslint": "latest",
     "@nuxthub/core": "latest",
+    "drizzle-kit": "latest",
+    "drizzle-orm": "latest",
     "zod": "latest"
   },
   "devDependencies": {
